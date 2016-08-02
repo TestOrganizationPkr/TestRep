@@ -1,0 +1,6 @@
+---
+applications:
+- name: a1q10
+  memory: 128M
+  instances: 1
+

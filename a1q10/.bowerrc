@@ -1,0 +1,4 @@
+{
+  "directory": "client/bower_components",
+  "post_install": "app/bower_postinstall"
+}
