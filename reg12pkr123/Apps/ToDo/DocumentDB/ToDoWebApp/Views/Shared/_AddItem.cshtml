@@ -1,0 +1,13 @@
+﻿@model Domain.Models.ToDoItem
+@using System.Web.Optimization
+@using (Html.BeginForm("Create", "ToDo", new { ReturnUrl = ViewBag.ReturnUrl, }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="inputdiv">
+        @Html.TextBoxFor(m => m.Name, new { placeholder = "Add To Do" })
+        <img class="fright" src="Images/AddIcon.png" alt="AddIcon.png" onclick="$(this).closest('form').submit()"/>
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    </div>
+}
+@Scripts.Render("~/bundles/jqueryval")
