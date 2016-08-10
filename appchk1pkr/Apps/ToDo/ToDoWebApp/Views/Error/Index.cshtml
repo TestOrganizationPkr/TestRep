@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "Error";
+    string msg = (null != TempData && null != TempData["ErrorMsg"]) ? Convert.ToString(TempData["ErrorMsg"]) : "Looks like something went wrong!";
+}
+
+@msg
+
+
