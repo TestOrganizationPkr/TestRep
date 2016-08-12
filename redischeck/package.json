@@ -1,0 +1,23 @@
+{
+  "license" : "ISC",
+  "devDependencies" : {
+    "chai" : "^3.5.0",
+    "expect.js" : "^0.3.1",
+    "chai-http" : "^2.0.1"
+  },
+  "author" : "Cognizant Technology Solutions",
+  "name" : "customapp",
+  "description" : "Blank App",
+  "main" : "app.js",
+  "scripts" : {
+    "start" : "node app.js"
+  },
+  "version" : "1.0.0",
+  "dependencies" : {
+    "node-uuid" : "1.4.7",
+    "cfenv" : "1.0.3",
+    "express" : "~4.13.1",
+    "body-parser" : "~1.5.2",
+    "redis" : "2.6.2"
+  }
+}

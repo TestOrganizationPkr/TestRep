@@ -1,0 +1,7 @@
+---
+applications:
+- name: redischeck
+  memory: 128M
+  instances: 1
+  services:
+   - redischeck-redis-0981096107
