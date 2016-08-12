@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoMobileApp", "ToDoMobileApp\ToDoMobileApp.csproj", "{A4D6E3CB-051D-46AF-86C7-32654829C1EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{18877E91-4E0D-4C2D-A723-B147C83CFE4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{9B54EF66-E322-4CD2-827A-25467FE899F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoMobileApp.Tests", "ToDoMobileApp.Tests\ToDoMobileApp.Tests.csproj", "{E8410B59-3CA7-466C-A2CB-528A88714C6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{EC24858F-D2A1-4D92-894B-D559BD9089E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlobStorage", "BlobStorage\BlobStorage.csproj", "{B72702AE-15F4-4806-9319-8EA3C1398BB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4D6E3CB-051D-46AF-86C7-32654829C1EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D6E3CB-051D-46AF-86C7-32654829C1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D6E3CB-051D-46AF-86C7-32654829C1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D6E3CB-051D-46AF-86C7-32654829C1EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18877E91-4E0D-4C2D-A723-B147C83CFE4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18877E91-4E0D-4C2D-A723-B147C83CFE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18877E91-4E0D-4C2D-A723-B147C83CFE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18877E91-4E0D-4C2D-A723-B147C83CFE4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B54EF66-E322-4CD2-827A-25467FE899F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B54EF66-E322-4CD2-827A-25467FE899F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B54EF66-E322-4CD2-827A-25467FE899F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B54EF66-E322-4CD2-827A-25467FE899F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8410B59-3CA7-466C-A2CB-528A88714C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8410B59-3CA7-466C-A2CB-528A88714C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8410B59-3CA7-466C-A2CB-528A88714C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8410B59-3CA7-466C-A2CB-528A88714C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC24858F-D2A1-4D92-894B-D559BD9089E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC24858F-D2A1-4D92-894B-D559BD9089E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC24858F-D2A1-4D92-894B-D559BD9089E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC24858F-D2A1-4D92-894B-D559BD9089E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B72702AE-15F4-4806-9319-8EA3C1398BB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{B72702AE-15F4-4806-9319-8EA3C1398BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{B72702AE-15F4-4806-9319-8EA3C1398BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{B72702AE-15F4-4806-9319-8EA3C1398BB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

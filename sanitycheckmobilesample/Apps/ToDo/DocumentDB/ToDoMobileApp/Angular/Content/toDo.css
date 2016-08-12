@@ -1,0 +1,269 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@font-face {
+  font-family: 'open sanslight';
+  src: url('../fonts/OpenSans-Light-webfont.eot');
+	src: url('../fonts/OpenSans-Light-webfont.eot?iefix') format('eot'),
+	     url('../fonts/OpenSans-Light-webfont.woff') format('woff'),
+	     url('../fonts/OpenSans-Light-webfont.ttf') format('truetype'),
+	     url('../fonts/OpenSans-Light-webfont.svg#webfont') format('svg');
+}
+@font-face {
+  font-family: 'open sans';
+ src: url('../fonts/OpenSans-Regular-webfont.eot');
+	src: url('../fonts/OpenSans-Regular-webfont.eot?iefix') format('eot'),
+	     url('../fonts/OpenSans-Regular-webfont.woff') format('woff'),
+	     url('../fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+	     url('../fonts/OpenSans-Regular-webfont.svg#webfont') format('svg');
+}
+@font-face {
+  font-family: 'open sanssemibold';
+src: url('../fonts/OpenSans-Semibold-webfont.eot');
+	src: url('../fonts/OpenSans-Semibold-webfont.eot?iefix') format('eot'),
+	     url('../fonts/OpenSans-Semibold-webfont.woff') format('woff'),
+	     url('../fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
+	     url('../fonts/OpenSans-Semibold-webfont.svg#webfont') format('svg');
+}
+button{
+background:none;
+border:none;
+outline:none;
+}
+.fright{
+	float:right;
+}
+.fleft{
+	float:left;
+}
+.clearfix:before,.clearfix:after {
+	content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.ToDoApp{
+	width:100%;
+}
+.ToDoApp .logoHdr{
+	width: 100%;
+    height: 55px;
+    background-color: #1f1f1f;
+    box-shadow: 0px -2px 0px 2px #cacccf;
+    position: fixed;
+    top: 0px;
+}
+.ToDoApp .logoHdr img{
+    margin: 6px 4px;
+	
+}
+.ToDoApp .logoHdr #profile{
+	width:45px;
+	height:45px;
+	border-radius:50%;
+}
+.ToDoApp .contentDiv{
+	width:100%;
+}
+.ToDoApp .contentDiv .headerDiv{
+	width: 100%;
+    height: 55px;
+    background-color: #ebeef0;
+    border-bottom: #e3e3e3 solid 1px;
+	margin-top:56px;
+	text-align:center;
+}
+.ToDoApp .contentDiv .headerDiv img{
+	margin-top: -57px;
+    margin-right: 8px;
+}
+.ToDoApp .contentDiv .headerDiv .hdrCount{
+	margin: -9px 67px 0 0;
+    width: 45px;
+    background-color: #2fcc70;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+	color:white;
+	font-family:open sans;
+}
+.ToDoApp .contentDiv .headerDiv .headerdivh2{
+    font-family: open sans;
+    font-size: 24px;
+    text-align: center;
+    padding: 14px 0px;
+	color:#121b21;
+	width:100%;
+}
+.ToDoApp .contentDiv .ToDoList{
+	width:50%;
+	margin:4% auto;
+	text-align:center;
+}
+.ToDoApp .contentDiv .ToDoList h2{
+    color: #4b6775;
+    font-family: open sanssemibold;
+    font-size: 26px;
+	text-align:center;
+
+}
+.ToDoApp .contentDiv .ToDoList .todohdr{
+	width:45%;
+	text-align:center;
+	margin:20px auto 25px;
+}
+.ToDoApp .contentDiv .ToDoList .todohdr h2{
+	    padding: 10px 0;
+}
+.ToDoApp .contentDiv .ToDoList .inputdiv input{
+	line-height:1rem;
+	text-align: center;
+    width: 90%;
+    padding: 2.55% 0%;
+    border: 1px solid #d4d4d4;
+    box-shadow: #f7f7f7 2px 0px 3px 5px;
+	
+}
+
+input:focus {outline:0 !important;}
+.ToDoApp .contentDiv .ToDoList .inputdiv img{
+	vertical-align:middle;
+}
+
+
+.ToDoApp .contentDiv .ToDoList .ToDoTbl{
+	width:100%;
+	margin:4% auto;
+	text-align:center;
+	font-family:open sans;
+}
+.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRow{
+	border:1px solid #e3e3e3;
+	line-height:3.3rem;
+	background-color:#fcfcfc;
+}
+.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRowKnockout{
+	line-height:3.3rem;
+	background-color:#fcfcfc;
+}
+
+.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRow .tdhead,.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRowKnockout .tdhead{
+    width: 76%;
+    text-align: left;
+    padding: 0px 0px 0px 20px;
+	color:#717c82;
+	font-family:open sanssemibold;
+}
+.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRow .tdIcons,.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRowKnockout .tdIcons{
+	font-size:12px;
+	color:#717c82;
+	font-weight:600;
+	float:left;
+	text-decoration:none;
+	width:5%;
+}
+.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRow .tdIcons img,.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRowKnockout .tdIcons img{
+	vertical-align:middle;
+}
+.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRow .borderleft,.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRowKnockout .borderleft{
+	border-right:1px solid #e3e3e3;
+	padding: 4% 20%;
+}
+
+.ToDoApp .contentDiv .ToDoList .todohdr .count{
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: #f5bb58;
+	margin:0 15px;
+	line-height: 45px;
+	color:#fff;
+	font-size:20px;
+	font-family:open sanssemibold;
+}
+.ToDoApp .contentDiv .ToDoList .todohdr  .countcnt{
+	padding:18px 0;
+	font-size:10px;
+	font-family:open sanssemibold;
+	color: #4b6775;
+}
+.inputcls{
+	width: 76%;
+    text-align: left;
+    padding: 0px 0px 0px 20px;
+    color: #717c82;
+	line-height:3rem;
+    font-family: open sanssemibold;
+}
+.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRow .tdIcons h5,.ToDoApp .contentDiv .ToDoList .ToDoTbl .ToDoRowKnockout .tdIcons h5{			
+	        font-family:open sanslight;			
+	}
+	.overalldiv{
+		
+		border:1px solid #e3e3e3;
+	}
+	.AfterEdit{
+		padding:1%;
+	}
+	.overalldiv1{
+		padding:1%;
+		border: 1px solid #e3e3e3;
+	}
+	.ToDoRowKnockout{
+		line-height:3.3rem;
+	background-color:#fcfcfc;
+	}
+	
+.inputdiv input::-webkit-input-placeholder { color:#4b6775; font-family:open sanssemibold; font-size:16px;}
+ .inputdiv input::-moz-placeholder { color:#4b6775; font-family:open sanssemibold; font-size:16px; } /* firefox 19+ */
+.inputdiv input:-ms-input-placeholder { color:#4b6775; font-family:open sanssemibold;font-size:16px; } /* ie */
+.inputdiv input:-moz-placeholder { color:#4b6775; font-family:open sanssemibold; font-size:16px; }
