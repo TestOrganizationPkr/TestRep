@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
+<body>
+	<div class="ToDoApp" id="main-container">
+		<header>
+			<div class="logoHdr">
+				<img src="images/logo.png" alt="logo.png"/>
+			</div>
+		</header>
+		<div class="contentDiv" id="main-container">
+			<div class="headerDiv">
+				<h2 class="headerdivh2 clearfix fleft">Node-Knockout ToDo
+				</h2>	
+			</div>
+			<div class="ToDoList">
+				<div class="clearfix todohdr">
+					<h2 class="fleft">To Do List</h2>
+					<span class="fleft count" data-bind="text: tasklist().length"></span>
+					<span class="fleft countcnt">COUNT</span>
+				</div>
+				<form id="todo-form" data-bind="submit: addTask">
+					<div class ="inputdiv">
+						<input id="first_name" type="text" placeholder="Add To Do" 
+						data-bind='value: taskToAdd, valueUpdate: "afterkeydown"'/>
+						<button type="submit" class="fright">
+							<img src="images/AddIcon.png" alt="AddIcon.png" data-bind="enable: taskToAdd().length > 0"/>
+						</button>
+					</div>
+				</form>
+				<div class="ToDoTbl">
+					<div class="clearfix ToDoRow" data-bind="template: { name: currentTemplate, foreach: tasklist }">
+					</div>
+					<!-- <div class="clearfix ToDoRow" ng-repeat="todo in todos"> -->
+					<script id="readOnly" type="text/html">
+						<div class="clearfix overalldiv" style="border:1px solid #e3e3e3;">
+						<label class="fleft tdhead"><b data-bind="text: $data.task_name"></b></label>
+					
+						<a href="#" class="tdIcons" data-bind="value: $data.task_name">
+							<img src="images/Edit.png" alt="Edit.png"/ data-bind="click: function () { ToDoViewModel.selectedMode($data);}">
+						</a>
+						<a href="#" class="clearfix tdIcons">
+							<h5 class=""><span class="borderleft" data-bind="click: function () { ToDoViewModel.selectedMode($data);}" 
+							ng-click="toggleEdit(todo);">Edit</span></h5>
+						</a>
+						<a href="#" class="tdIcons">
+							<img id="icon2_{{todo._id}}" src="images/Delete.png" alt="Delete.png"/   
+							data-bind="click: function () { ToDoViewModel.deleteTask($data); }">
+						</a>
+						<a href="#" class="tdIcons" id="icon6_{{todo._id}}" ng-click="deleteTodo(todo);">
+							<h5 data-bind="click: function () { ToDoViewModel.deleteTask($data); }">Delete</h5>
+						</a>
+						</div>
+					</script>	
+					 <script id="editMode" type="text/html">
+							<input class="fleft inputcls" type="text" data-bind="value: $data.task_name">
+						
+						<a href="#" class="tdIcons">
+							<img style="display: inline-block;" 
+							src="images/save.png" alt="save.png"/  data-bind="click: ToDoViewModel.saveTask">
+						</a>
+						<a href="#" class="clearfix tdIcons">
+							<h5 class=""><span data-bind="click: ToDoViewModel.saveTask">Save</span></h5>
+							</a>
+						<a href="#" class="tdIcons">
+							<img  style="display: inline-block;"
+							src="images/close.png" alt="close.png"/  data-bind="click: function () { ToDoViewModel.reset(); }">
+							</a>
+						<a href="#" class="tdIcons"  >
+							<h5 data-bind="click: function () { ToDoViewModel.reset(); }">Cancel</h5>
+						</a>
+					</script>
+					<!-- </div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./controllers/toDo.js"></script> <!-- load up the services -->
+</body>
+</html>
