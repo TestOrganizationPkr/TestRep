@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="../static/css/reset.css" th:href ="@{css/reset.css}" />
+	<link rel="stylesheet" href="../static/css/style.css" th:href ="@{css/style.css}" />
+	<link type="text/css" rel="stylesheet" href="../static/css/materialize.css" th:href ="@{css/materialize.css}"/>
+	<title>Album Management</title>
+	<script src="../static/js/jquery-1.10.2.min.js" th:src="@{js/jquery-1.10.2.min.js}"></script>
+	<script src="../static/js/angular.min.js"></script><!-- load angular -->
+	<script type="text/javascript" src="../static/js/materialize.min.js" th:src="@{js/materialize.min.js}"></script>
+	<script src="../static/js/angular.min.js" th:src="@{js/angular.min.js}" ></script>
+	<script src="../static/js/app.js" th:src="@{js/app.js}"></script>
+	<script src="../static/js/user_service.js"
+		th:src="@{js/user_service.js}"></script>
+	<script src="../static/js/app_controller.js"
+		th:src="@{js/app_controller.js}"></script>
+	<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+</head>
+<body data-ng-app="myApp" class="ng-cloak">
+<script src="../static/js/angular.min.js" th:src="@{js/angular.min.js}" ></script>
+	<script src="../static/js/app.js" th:src="@{js/app.js}"></script>
+	<script src="../static/js/user_service.js"
+		th:src="@{js/user_service.js}"></script>
+	<script src="../static/js/app_controller.js"
+		th:src="@{js/app_controller.js}"></script>
+	<div class="ToDoApp">
+		<header>
+			<div class="logoHdr">
+				<img src="../static/images/logo.png" alt="logo.png" th:src="@{images/logo.png}" />
+			</div>
+		</header>
+		<div class="contentDiv" data-ng-controller="AppController as ctrl">
+			<div class="headerDiv">
+				<h2 class="headerdivh2 clearfix fleft">Java- Album Management
+				</h2>	
+			</div>
+			<div class="AlbumList">
+				<form data-ng-submit="ctrl.submit()" class="row AlbumRow">
+						<input type="hidden" data-ng-model="ctrl.user.id" />
+						<div class="input-field col s6 inputclass Titlecls">
+							<input id="title" type="text" class="validate" data-ng-model="ctrl.user.title" data-ng-bind="" />
+							<label class="labelclass" for="title">Title</label>
+						</div>
+						<div class="input-field col s6 inputclass Artistcls">
+							<input id="artist" type="text" class="validate" data-ng-model="ctrl.user.artist"/>
+							<label class="labelclass" for="artist">Artist</label>
+						</div>
+						<div class="input-field col s6 inputclass Releasecls">
+							<input id="releaseYear" type="text" class="validate" data-ng-model="ctrl.user.releaseYear"/>
+							<label class="labelclass" for="releaseYear">Release Year</label>
+						</div>
+						<input type="submit" id="add" class="addList" value="" style="-webkit-appearance:none; border:none;"/>
+							
+				</form>
+				<div class="AlbumTbl">
+					<header>
+						<h5>List Of Albums</h5>
+					</header>
+					<div class="rowhead">
+						<span>Title</span>
+						<span>Artist</span>
+						<span>Release Year</span>
+					</div>
+					<div class="clearfix albumTblList" data-ng-repeat="u in ctrl.users" >
+						<label id="titlelbl{{u.id}}" class="fleft AlbumLbl" data-ng-bind="u.title"></label>
+						<label id="artistlbl{{u.id}}" class="fleft AlbumLbl" data-ng-bind="u.artist" ></label>
+						<label id="releaselbl{{u.id}}" class="fleft AlbumLbl" data-ng-bind="u.releaseYear" ></label>
+						<div class="fright albumTblBtn" id="albumdiv{{u.id}}">
+							<a href="#" class="fleft tdIcons" >
+								<img id="edit{{u.id}}" src="../static/images/Edit.png" th:src="@{images/Edit.png}" alt="Edit.png" data-ng-click="ctrl.edit(u.id,u.title)"/>
+							</a>
+							<a href="#" class="fleft tdIcons">
+								<h5 id="edittxt{{u.id}}" class=""><span class="borderleft" data-ng-click="ctrl.edit(u.id,u.title)">Edit</span></h5>
+							</a>
+							<a href="#" class="fleft tdIcons">
+								<img id="remove{{u.id}}" src="../static/images/Delete.png" alt="Delete.png"  th:src="@{images/Delete.png}" data-ng-click="ctrl.remove(u.id)"/>
+							</a>
+							<a href="#" class="fleft tdIcons" data-ng-click="ctrl.remove(u.id)">
+								<h5 id="removetxt{{u.id}}">Delete</h5>
+							</a>
+						</div>
+					
+							<!--Edit-->
+					<form data-ng-submit="ctrl.submit()" class="row" >
+						<div  id="inputdiv{{u.id}}" class="overall" style="display:none">
+							<input class="fleft inputclas" id="inputdivtitle{{u.id}}" type="text" data-ng-bind="u.title" data-ng-model="ctrl.user.title" value="{{u.title}}" />
+							<input class="fleft inputclas" id="inputdivartist{{u.id}}" type="text" data-ng-bind="u.artist" data-ng-model="ctrl.user.artist" value="{{u.artist}}"/>
+							<input class="fleft inputclas" id="inputdivrelease{{u.id}}" type="text" data-ng-bind="u.releaseYear" data-ng-model="ctrl.user.releaseYear" value="{{u.releaseYear}}" />
+						</div>
+						<div class="fright albumTblBtn" >
+							<input type="submit" id="save{{u.id}}" class="fleft saveList" value="" 
+							style="display:none; -webkit-appearance:none; border:none;"/>
+							
+							<input type="submit" style="display:none; -webkit-appearance:none; border:none;"
+							id="savetxt{{u.id}}" value="save" class="fleft saveListContent"/>
+							
+								  
+							<a href="#" class="fleft tdIcons">
+								<img id="cancel{{u.id}}" style="display: none;"
+								src="../static/images/close.png"  th:src="@{images/close.png}" alt="close.png" data-ng-click="ctrl.reset(u.id,u.title)"/>
+							</a>
+							<a href="#" class="fleft tdIcons" id="canceltxt{{u.id}}" data-ng-click="ctrl.reset(u.id,u.title)"  style="display: none;">
+								<h5>Cancel</h5>
+							</a>
+						</div>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

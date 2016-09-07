@@ -1,0 +1,8 @@
+---
+applications:
+- name: appsampleraja
+  memory: 800M
+  instances: 1
+  services:
+    - appsampleraja-mongodb-3249003962
+
