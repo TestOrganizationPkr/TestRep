@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html ng-app="toDo">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./Content/toDo.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="./Scripts/toDoController.js"></script> <!-- load up our services -->
+    <script src="./Scripts/toDoService.js"></script> <!-- load up our services -->
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
+<body>
+    <div class="ToDoApp" ng-controller="ToDoController">
+        <style>
+            form {
+                display: initial;
+            }
+        </style>
+        <header>
+            <div class="logoHdr">
+                <img src="Images/logo.png" alt="logo.png" />
+                <div class="clearfix fright">
+					<img id="profile" src="Images/ProfileIcon.png" alt="ProfileIcon.png" ng-src="{{imageURL}}"
+					onclick="document.getElementById('fileToUpload').click()"/>
+					<input type="file" id="fileToUpload" name="file" accept="image/*" style="display:none;" 
+					onchange="angular.element(this).scope().FileUpload(this.files)" />
+					<img src="Images/EditIcon.png" alt="EditIcon.png" ng-click="DeleteFile()"/>	
+				</div>
+            </div>
+
+        </header>
+        <div class="contentDiv" ng-controller="ToDoController">
+            <div class="headerDiv">
+                <h2 class="headerdivh2 clearfix fleft">
+				<span class="fright hdrCount">{{ itemCount }}</span>
+				
+				</h2>
+<img class="fright" src="Images/editback.png" alt="editback.png" ng-click="deleteCache()"/>
+            </div>
+            <div class="ToDoList">
+                <div class="clearfix todohdr">
+                    <h2 class="fleft">To Do List</h2>
+                    <span class="fleft count">{{ todos.length }}</span>
+                    <span class="fleft countcnt">COUNT</span>
+                </div>
+                <div class="inputdiv">
+                    <input id="first_name" type="text" placeholder="Add To Do" ng-model="formData.Name" />
+                    <img class="fright" src="Images/AddIcon.png" alt="AddIcon.png" ng-click="createTodo()" />
+                </div>
+                <div class="ToDoTbl">
+                    <div class="clearfix ToDoRow" ng-repeat="todo in todos">
+
+                        <label class="fleft tdhead" ng-hide="todo.isEditable"><b>{{ todo.Name }}</b></label>
+                        <div class="clearfix BforEdit" ng-hide="todo.isEditable" id="icon10{{todo.Name}}">
+                            <a href="#" class="tdIcons">
+                                <img id="icon1{{todo.Name}}" src="Images/Edit.png" alt="Edit.png" ng-hide="todo.isEditable"
+                                     ng-click="toggleEdit(todo);" />
+                            </a>
+                            <a href="#" class="clearfix tdIcons">
+                                <h5 class=""><span class="borderleft" id="icon5{{todo.Name}}" ng-click="toggleEdit(todo);">Edit</span></h5>
+                            </a>
+                            <a href="#" class="tdIcons">
+                                <img id="icon2{{todo.Name}}" src="Images/Delete.png" alt="Delete.png" ng-click="deleteTodo(todo.Id)" />
+                            </a>
+                            <a href="#" class="tdIcons" id="icon6{{todo.Name}}" ng-click="deleteTodo(todo.Id)">
+                                <h5>Delete</h5>
+                            </a>
+                        </div>
+                        <div class="clearfix AfterEdit" ng-show="todo.isEditable" id="icon11{{todo.Name}}">
+                            <input class="fleft inputcls" type="text" id={{todo.Name}} ng-show="todo.isEditable" value={{todo.Name}}>
+
+                            <a href="#" class="tdIcons">
+                                <img id="icon3{{todo.Name}}"
+                                     src="Images/save.png" alt="save.png" ng-click="saveEdit(todo);" />
+                            </a>
+                            <a href="#" class="clearfix tdIcons">
+                                <h5 class=""><span id="icon7{{todo.Name}}" ng-click="saveEdit(todo);">Save</span></h5>
+                            </a>
+                            <a href="#" class="tdIcons">
+                                <img id="icon4{{todo.Name}}"
+                                     src="Images/close.png" alt="close.png" ng-click="cancelEdit(todo);" />
+                            </a>
+                            <a href="#" class="tdIcons" id="icon8{{todo.Name}}" ng-click="cancelEdit(todo);">
+                                <h5>Cancel</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
