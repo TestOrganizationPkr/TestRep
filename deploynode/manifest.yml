@@ -1,0 +1,8 @@
+---
+applications:
+- name: deploynode
+  memory: 128M
+  instances: 1
+  services:
+    - deploynode-mongodb-5146155594
+

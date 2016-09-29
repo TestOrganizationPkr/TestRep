@@ -1,0 +1,27 @@
+{
+  "license" : "ISC",
+  "devDependencies" : {
+    "chai" : "^3.5.0",
+    "expect.js" : "^0.3.1",
+    "chai-http" : "^2.0.1"
+  },
+  "name" : "senecablank",
+  "description" : "Custom template using Seneca",
+  "main" : "app.js",
+  "scripts" : {
+    "start" : "node app.js"
+  },
+  "version" : "1.0.0",
+  "dependencies" : {
+    "lodash" : "~3.10.1",
+    "seneca-mongo-store" : "*",
+    "seneca-entity" : "0.0.1",
+    "seneca" : "~2.0.0",
+    "cfenv" : "1.0.3",
+    "express" : "~4.13.1",
+    "react" : "0.13.3",
+    "react-router" : "0.13.3",
+    "body-parser" : "~1.5.2",
+    "jquery" : "2.1.4"
+  }
+}
