@@ -1,0 +1,9 @@
+---
+applications:
+- name: deploytrial
+  memory: 512M
+  instances: 1
+  services:
+    - deploytrial-mongodb-5145568781
+    - deploytrial-sendgrid-5145568782
+
