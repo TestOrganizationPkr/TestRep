@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="~/Content/toDo.css" rel="stylesheet" />
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react@15.3.2/dist/react-with-addons.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://unpkg.com/jquery@3.1.0/dist/jquery.min.js"></script>
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
+<body>
+    <div class="ToDoApp">
+        <style>
+            form {
+                display: initial;
+            }                       
+        </style>
+
+        <div class='logoHdr'>
+            <img src="Images/logo.png" alt="logo.png" />
+            <!--Blob_React_TodoIndex-->
+        </div>
+        <div class="contentDiv">
+          <div class="headerDiv" id="getredis">
+           </div>
+            <div class="ToDoList">
+                <div class="clearfix todohdr">
+                    <h2 class="fleft">To Do List</h2>
+                    <span class="fleft count" id="itemcount">0</span>
+                    <span class="fleft countcnt">COUNT</span>
+                </div>
+                <div id="todo-form">
+
+                </div>
+                <div id="ToDoTbl">
+
+                   
+                </div>
+
+
+            </div>
+        </div>
+       
+
+    </div>
+    <!--Notification_React_TodoIndex-->
+        
+    <script type="text/babel" src="~/Scripts/toDo.jsx"></script>
+</body>
+</html>
