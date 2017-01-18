@@ -1,0 +1,10 @@
+---
+applications:
+- name: app_name
+  memory: 512M
+  disk_quota: 1500M
+  instances: 1
+  buildpack: binary_buildpack
+  stack: windows2012R2
+  services:
+    - dotnetpivotal10-mysql-4706748351
