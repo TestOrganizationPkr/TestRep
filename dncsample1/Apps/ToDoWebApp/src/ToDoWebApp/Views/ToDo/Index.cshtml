@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "ToDo";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title - ToDo</title>
+    <link href="~/Content/toDo.css" rel="stylesheet" />
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
+<body>
+    <div class="ToDoApp">
+        <header>
+            <div class="logoHdr">
+                <img src="Images/logo.png" alt="logo.png" />
+            </div>
+        </header>
+        <div class="contentDiv" id="main-container">
+            <div class="headerDiv">
+                 <h2 class="headerdivh2 clearfix fleft">
+                    <span class="fright hdrCount" data-bind="text: itemCount()"></span>
+                </h2>
+                <form data-bind="submit: deleteCache">
+                    <img class="fright" src="Images/editback.png" alt="editback.png" onclick="$(this).closest('form').submit()" />
+                </form>   
+            </div>
+            <div class="ToDoList">
+                <div class="clearfix todohdr">
+                    <h2 class="fleft">To Do List</h2>
+                    <span class="fleft count" id="ToDoItemCountKnockout" data-bind="text: tasklist().length"></span>
+                    <span class="fleft countcnt">COUNT</span>
+                </div>
+                <form id="todo-form" data-bind="submit: addTask">
+                    <div class="inputdiv">
+                        <input id="first_name" type="text" placeholder="Add To Do"
+                               data-bind='value: taskToAdd, valueUpdate: "afterkeydown"' />
+                        <button type="submit" class="fright">
+                            <img src="Images/AddIcon.png" alt="AddIcon.png" data-bind="enable: taskToAdd().length > 0" />
+                        </button>
+                    </div>
+                </form>
+                <div class="ToDoTbl">
+                    <div class="clearfix ToDoRowKnockout" id="ToDoRowKnockout" data-bind="template: { name: templateToUse, foreach: tasklist }">
+                    </div>
+                    <script id="readOnly" type="text/html">
+                        <div class="clearfix overalldiv">
+                            <label class="fleft tdhead"><b data-bind="text: Name"></b></label>
+                            <div class="BforEdit">
+                                <a href="#" class="tdIcons" data-bind="value: Name">
+                                    <img src="Images/Edit.png" alt="Edit.png" data-bind="click: $root.editTask" />
+                                </a>
+                                <a href="#" class="tdIconsText">
+                                    <h5 class=""><span class="borderleft" data-bind="click: $root.editTask">Edit</span></h5>
+                                </a>
+                                <a href="#" class="tdIcons">
+                                    <img src="Images/Delete.png" alt="Delete.png" data-bind="click: $root.deleteTask" />
+                                </a>
+                                <a href="#" class="tdIconsText toDoDeleteIcon" ng-click="deleteTodo(todo);">
+                                    <h5 data-bind="click: $root.deleteTask">Delete</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </script>
+                    <script id="editMode" type="text/html">
+                        <div class="clearfix overalldiv1 AfterEdit">
+                            <input class="fleft inputcls" type="text" data-bind="value: Name">
+                            <a href="#" class="tdIcons">
+                                <img style="display: inline-block;"
+                                     src="Images/save.png" alt="save.png" data-bind="click: $root.acceptTaskEdit" />
+                            </a>
+                            <a href="#" class="tdIcons">
+                                <h5 class=""><span data-bind="click: $root.acceptTaskEdit">Save</span></h5>
+                            </a>
+                            <a href="#" class="tdIcons">
+                                <img style="display: inline-block;"
+                                     src="Images/close.png" alt="close.png" data-bind="click: $root.cancelTaskEdit" />
+                            </a>
+                            <a href="#" class="tdIcons">
+                                <h5 data-bind="click: $root.cancelTaskEdit">Cancel</h5>
+                            </a>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    >
+    <script src="~/Scripts/toDo.js"></script>
+</body>
+</html>

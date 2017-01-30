@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+   "Cache": "1.0.0-*",
+    "AutoMapper": "5.1.1",
+    "DataAccessLayer": "1.0.0-*",
+    "Domain": "1.0.0-*",
+    "NETStandard.Library": "1.6.0"
+  },
+
+  "frameworks": {
+    "net452": {}
+  }
+}

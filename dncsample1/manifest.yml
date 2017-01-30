@@ -1,0 +1,15 @@
+---
+applications:
+- name: dncsample1
+  memory: 512M
+  disk_quota: 1500M
+  instances: 1
+  services:
+    - dncsample1-azuredocu-5751971370
+    - dncsample1-redis-5751971370
+  env:
+    - sdfsd: sdfsdf
+    - 2342: 4234
+ 
+ 
+ 

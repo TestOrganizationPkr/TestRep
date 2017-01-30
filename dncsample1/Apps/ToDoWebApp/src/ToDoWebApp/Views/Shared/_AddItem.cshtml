@@ -1,0 +1,16 @@
+﻿@model Domain.Models.ToDoItem
+
+@using (Html.BeginForm("Create", "ToDo", new { ReturnUrl = ViewBag.ReturnUrl, }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="inputdiv">
+        @Html.TextBoxFor(m => m.Name, new { placeholder = "Add To Do" })
+        <img class="fright" src="~/Images/AddIcon.png" alt="AddIcon.png" onclick="$(this).closest('form').submit()"/>
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
+
+}

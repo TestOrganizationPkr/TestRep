@@ -1,0 +1,30 @@
+﻿{
+  "version": "1.0.0-*",
+  "testRunner": "xunit",
+  "dependencies": {
+	"Cache": "1.0.0-*",
+    "xunit": "1.1.0",
+    "dotnet-test-xunit": "1.0.0-rc2-build10025",
+    "Microsoft.EntityFrameworkCore.InMemory": "1.0.0",
+    "BusinessLogic": "1.0.0-*",
+    "DataAccessLayer": "1.0.0-*",
+    "Domain": "1.0.0-*",
+    "ToDoWebApp": "1.0.0-*",
+    "Microsoft.AspNetCore.TestHost": "1.0.0"
+  },
+  //"frameworks": {
+  //  "net452": {}
+  //},
+  "frameworks": {
+    "net452": {}
+    //"netcoreapp1.0": {
+    //  "dependencies": {
+    //    "Microsoft.NETCore.App": {
+    //      "type": "platform",
+    //      "version": "1.0.0"
+    //    }
+    //  },
+    //  "imports": "dnxcore50"
+    //}
+  }
+}
